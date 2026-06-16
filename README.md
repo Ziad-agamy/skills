@@ -1,6 +1,6 @@
 # Agent Skills Collection
 
-A repository of specialized agent skills — modular instruction packages that teach AI coding agents how to perform specific tasks. Each skill lives in its own directory and is independently installable via `npx skills add`.
+A repository of specialized agent skills — modular instruction packages that teach AI coding agents how to perform specific tasks. All skills live in this single repo and are installable via `npx skills add`.
 
 ---
 
@@ -12,7 +12,7 @@ Design high-conversion landing pages using psychology-driven section architectur
 
 | | |
 |---|---|
-| **Install** | `npx skills add Ziad-agamy/landing-page-architect` |
+| **Install** | `npx skills add Ziad-agamy/skills --skill landing-page-architect` |
 | **Location** | `skills/landing-page-architect/` |
 | **Trigger** | Any landing page, sales page, or conversion page request |
 
@@ -34,7 +34,7 @@ Write professional freelance project proposals in Arabic and English that win cl
 
 | | |
 |---|---|
-| **Install** | `npx skills add Ziad-agamy/freelance-proposal-writer` |
+| **Install** | `npx skills add Ziad-agamy/skills --skill freelance-proposal-writer` |
 | **Location** | `skills/freelance-proposal-writer/` |
 | **Trigger** | Writing a proposal/cover letter/bid for Mostaqel, Upwork, Freelancer, Khamsat, etc. |
 
@@ -53,22 +53,26 @@ On first use, the skill builds a persistent profile of your experience, past pro
 
 ## Installation
 
-Install any skill with a single command:
+All skills are in the `Ziad-agamy/skills` repository. Install a specific skill with `--skill`:
 
 ```bash
-npx skills add Ziad-agamy/<skill-name>
+npx skills add Ziad-agamy/skills --skill landing-page-architect
+npx skills add Ziad-agamy/skills --skill freelance-proposal-writer
 ```
 
-For example:
+To install all skills at once:
 
 ```bash
-npx skills add Ziad-agamy/landing-page-architect
-npx skills add Ziad-agamy/freelance-proposal-writer
+npx skills add Ziad-agamy/skills --all
 ```
 
-The CLI resolves `Ziad-agamy/<skill-name>` by looking for the matching directory inside the `Ziad-agamy/skills` repository.
+To list available skills before installing:
 
-See the [skills CLI documentation](https://skills.sh) for more options (`--global`, `--agent`, `--list`, etc.).
+```bash
+npx skills add Ziad-agamy/skills --list
+```
+
+See the [skills CLI documentation](https://skills.sh) for more options (`--global`, `--agent`, etc.).
 
 ---
 
@@ -98,7 +102,7 @@ Each skill must have a `SKILL.md` file with YAML frontmatter (`name`, `descripti
 1. Create `skills/<name>/SKILL.md` with frontmatter (`name` + `description`). Keep the description precise — it determines when the skill activates.
 2. Add supporting files (references, scripts, templates) under `skills/<name>/`.
 3. Update this `README.md` with the new skill name, description, and install command.
-4. Push to GitHub and test with `npx skills add Ziad-agamy/<name>`.
+4. Push to GitHub and test with `npx skills add Ziad-agamy/skills --skill <name>`.
 
 ---
 
